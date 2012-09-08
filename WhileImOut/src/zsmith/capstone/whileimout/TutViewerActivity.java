@@ -1,0 +1,18 @@
+package zsmith.capstone.whileimout;
+
+import android.app.Activity;
+import android.content.Intent;
+import android.os.Bundle;
+import android.webkit.WebView;
+
+public class TutViewerActivity extends Activity {
+
+	public void onCreate(Bundle savedInstanceState){
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.tut_view);
+		Intent launch = getIntent();
+		String content = launch.getData().toString();
+		WebView viewer = (WebView)findViewById(R.id.tutView);
+		viewer.loadUrl(content);
+	}
+}

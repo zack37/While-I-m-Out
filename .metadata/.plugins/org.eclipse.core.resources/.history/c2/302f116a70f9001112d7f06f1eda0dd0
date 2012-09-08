@@ -1,0 +1,9 @@
+<resources>
+
+    <string name="app_name">WhileImOut</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_home">While I'm Out</string>
+    <string name="add_button_text">Create New Task</string>
+
+</resources>
