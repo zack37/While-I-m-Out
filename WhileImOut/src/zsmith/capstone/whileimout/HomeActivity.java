@@ -1,31 +1,40 @@
 package zsmith.capstone.whileimout;
 
-import android.app.ListActivity;
-import android.content.Intent;
-import android.net.Uri;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemClickListener;
-import android.widget.ArrayAdapter;
+import java.io.IOException;
+import java.util.logging.FileHandler;
 
-public class HomeActivity extends ListActivity {
+import android.app.Activity;
+
+import com.google.gson.Gson;
+
+public class HomeActivity extends Activity {
 	
-	@Override
-	public void onCreate(Bundle savedInstanceState){
-		super.onCreate(savedInstanceState);
-		setListAdapter(ArrayAdapter.createFromResource(getApplicationContext(),
-                R.array.tut_titles, R.layout.list_item	));
-		final String[] links = getResources().getStringArray(R.array.tut_links);
-		getListView().setOnItemClickListener(new OnItemClickListener(){
-//			@Override
-			public void onItemClick(AdapterView<?> parent, View view, int position, long id){
-				String content = links[position];
-				Intent showContent = new Intent(getApplicationContext(), TutViewerActivity.class);
-				showContent.setData(Uri.parse(content));
-				startActivity(showContent);
-			}
-		});
+	Gson gson;
+	FileHandler log;
+	
+	public HomeActivity() {
+		gson = new Gson();
+		try {
+			log = new FileHandler("log.txt", true);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
+	
+//	public void onCreate(Bundle savedInstanceState){
+//		super.onCreate(savedInstanceState);
+////		setListAdapter(ArrayAdapter.createFromResource(getApplicationContext(),
+////                R.array.tut_titles, R.layout.list_item	));
+////		final String[] links = getResources().getStringArray(R.array.tut_links);
+////		getListView().setOnItemClickListener(new OnItemClickListener(){
+//////			@Override
+////			public void onItemClick(AdapterView<?> parent, View view, int position, long id){
+////				String content = links[position];
+////				Intent showContent = new Intent(getApplicationContext(), TutViewerActivity.class);
+////				showContent.setData(Uri.parse(content));
+////				startActivity(showContent);
+////			}
+////		});
+//	}
     
 }

@@ -39,6 +39,7 @@ public final class R {
         public static final int add_button_hint=0x7f060004;
         public static final int add_button_text=0x7f060003;
         public static final int app_name=0x7f060000;
+        public static final int log_file=0x7f060005;
         public static final int menu_settings=0x7f060001;
         public static final int title_activity_home=0x7f060002;
     }

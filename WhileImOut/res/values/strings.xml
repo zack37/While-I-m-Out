@@ -5,5 +5,6 @@
     <string name="title_activity_home">While I\'m Out</string>
     <string name="add_button_text">Create New Task</string>
     <string name="add_button_hint">Use this button to create a new task</string>
+    <string name="log_file">&quot;/&quot;</string>
 
 </resources>
