@@ -1,20 +1,39 @@
 package utilities;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
 import java.io.IOException;
-import java.util.logging.FileHandler;
-import java.util.logging.Level;
-import java.util.logging.LogRecord;
 
 public class Logger {
 
-	private static FileHandler logger;
+	public static boolean log(String fileName, String message) {
+		try {
 
-	public static void Log(String fileName, String message, Level level)
-			throws IOException {
-		logger = new FileHandler(fileName, true);
+			FileWriter out = new FileWriter(fileName, true);
+			BufferedWriter writer = new BufferedWriter(out);
 
-		logger.publish(new LogRecord(level, message));
-		logger.close();
+			writer.write(message);
+			writer.newLine();
+			writer.flush();
+			writer.close();
+			return true;
+
+		} catch (IOException e) {
+			try {
+				BufferedWriter error = new BufferedWriter(new FileWriter(
+						"./error.log", true));
+				Messages errorMessage = Messages.ERROR;
+				errorMessage.setMessage("Error: " + e.toString());
+				error.write(errorMessage.toString());
+				error.newLine();
+				error.flush();
+				error.close();
+			} catch (IOException e1) {
+				e1.printStackTrace();
+			}
+		}
+		return false;
+
 	}
 
 }

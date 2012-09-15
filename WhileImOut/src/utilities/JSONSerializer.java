@@ -31,6 +31,10 @@ public class JSONSerializer {
 			out.write(json);
 		}
 	}
+	
+	public static <T> void testMethod(){
+		return;
+	}
 
 	public static <T> List<T> deserializeFromJSON(String filePath, Class<T> classType)
 			throws IOException {

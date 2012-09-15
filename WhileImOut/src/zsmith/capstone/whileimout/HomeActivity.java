@@ -12,8 +12,9 @@ public class HomeActivity extends Activity {
 	Gson gson;
 	FileHandler log;
 	
-	public HomeActivity() {
+	public HomeActivity() throws Exception {
 		gson = new Gson();
+		
 		try {
 			log = new FileHandler("log.txt", true);
 		} catch (IOException e) {
