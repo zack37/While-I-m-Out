@@ -16,7 +16,7 @@ public class LoggingTest extends TestCase {
 
 	public LoggingTest(String name) {
 		super(name);
-		fileName = "./log.log";
+		fileName = "./activitylog.log";
 	}
 
 	public void testLoggingCapability() {
@@ -33,6 +33,7 @@ public class LoggingTest extends TestCase {
 			while (in.readLine() != null) {
 				count++;
 			}
+			in.close();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -40,7 +41,7 @@ public class LoggingTest extends TestCase {
 	}
 
 	public void testLoggingErrors() {
-		new File("./error.log").delete();
+		new File("./errors.log").delete();
 
 		// No file path
 		assertFalse(Logger.log("", "This should fail due to no path specified"));

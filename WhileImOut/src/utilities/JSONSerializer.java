@@ -15,32 +15,43 @@ public class JSONSerializer {
 
 	private static Gson gson;
 
-	public static <T> void serializeToJSON(String filePath, List<T> toSerialize)
-			throws IOException {
+	public static <T> boolean serializeToJSON(String fileName,
+			List<T> toSerialize) {
 
 		gson = new Gson();
 
-		File file = new File(filePath);
-		if (!file.exists())
-			file.createNewFile();
+		File file = new File(fileName);
+		try {
+			if (!file.exists())
+				file.createNewFile();
 
-		FileWriter writer = new FileWriter(file);
-		BufferedWriter out = new BufferedWriter(writer);
-		for (T obj : toSerialize) {
-			String json = gson.toJson(obj);
-			out.write(json);
+			FileWriter writer = new FileWriter(file);
+			BufferedWriter out = new BufferedWriter(writer);
+			for (T obj : toSerialize) {
+				String json = gson.toJson(obj);				
+				out.write(json);
+				out.newLine();
+			}
+			out.flush();
+			out.close();
+
+			return true;
+		} catch (IOException e) {
+			Logger.log(FilePaths.ERROR.toString(),
+					"Error serializing object to JSON");
 		}
+		return false;
 	}
-	
-	public static <T> void testMethod(){
+
+	public static <T> void testMethod() {
 		return;
 	}
 
-	public static <T> List<T> deserializeFromJSON(String filePath, Class<T> classType)
-			throws IOException {
+	public static <T> List<T> deserializeFromJSON(String fileName,
+			Class<T> classType) throws IOException {
 
 		gson = new Gson();
-		File file = new File(filePath);
+		File file = new File(fileName);
 		ArrayList<T> objs = new ArrayList<T>();
 		if (file.exists()) {
 			FileReader reader = new FileReader(file);
@@ -49,6 +60,7 @@ public class JSONSerializer {
 			while ((line = in.readLine()) != null) {
 				objs.add(gson.fromJson(line, classType));
 			}
+			in.close();
 		}
 		return objs;
 	}
