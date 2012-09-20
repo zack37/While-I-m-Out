@@ -30,7 +30,7 @@ public class SerializeTest extends TestCase {
 		}
 		assertTrue(tasks.size() == 100);
 		assertTrue(JSONSerializer.serializeToJSON(fileName, tasks));
-		String pattern = "{\"name\":\"Test Task\",\"location\":{\"streetAddress\":\"1861 West 7265 South\",\"state\":\"Utah\",\"city\":\"West Jordan\",\"zipCode\":84084},\"proximityMode\":true,\"description\":\"\"}";
+		String pattern = "{\"name\":\"Test Task\",\"location\":{\"streetAddress\":\"1861 West 7265 South\",\"city\":\"West Jordan\",\"state\":\"Utah\",\"zipCode\":84084},\"proximityMode\":true,\"description\":\"\"}";
 		System.out.println(pattern);
 		assertTrue(checkFileContents(pattern));
 	}
@@ -38,7 +38,6 @@ public class SerializeTest extends TestCase {
 	private boolean checkFileContents(String match) {
 		try {
 			FileReader in = new FileReader(fileName);
-			@SuppressWarnings("resource")
 			BufferedReader read = new BufferedReader(in);
 			String line;
 			while ((line = read.readLine()) != null) {
@@ -58,6 +57,7 @@ public class SerializeTest extends TestCase {
 	public void testDeserialzeToObject() {
 		try {
 			List<Task> tasks = JSONSerializer.deserializeFromJSON(fileName, Task.class);
+			System.out.println(tasks.size());
 			Location l = new Location("1861 West 7265 South", "West Jordan",
 					"Utah", 84084);
 			Task t = new Task("Test Task", l, true);

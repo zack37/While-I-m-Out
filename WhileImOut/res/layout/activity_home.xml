@@ -2,10 +2,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
-
-    <Button
-        android:layout_width="fill_parent"
+    
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="Home" />
+    
+    <ListView android:id="@android:id/list"
         android:layout_height="wrap_content"
-        android:text="@string/add_button_text" />
-
+        android:layout_width="fill_parent"/>
 </RelativeLayout>

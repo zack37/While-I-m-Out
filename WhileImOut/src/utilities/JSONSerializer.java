@@ -9,16 +9,18 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.google.gson.Gson;
+import com.google.gson.*;
 
 public class JSONSerializer {
 
 	private static Gson gson;
 
+	static {
+		gson = new Gson();
+	}
+
 	public static <T> boolean serializeToJSON(String fileName,
 			List<T> toSerialize) {
-
-		gson = new Gson();
 
 		File file = new File(fileName);
 		try {
@@ -28,7 +30,7 @@ public class JSONSerializer {
 			FileWriter writer = new FileWriter(file);
 			BufferedWriter out = new BufferedWriter(writer);
 			for (T obj : toSerialize) {
-				String json = gson.toJson(obj);				
+				String json = gson.toJson(obj);
 				out.write(json);
 				out.newLine();
 			}
@@ -49,8 +51,6 @@ public class JSONSerializer {
 
 	public static <T> List<T> deserializeFromJSON(String fileName,
 			Class<T> classType) throws IOException {
-
-		gson = new Gson();
 		File file = new File(fileName);
 		ArrayList<T> objs = new ArrayList<T>();
 		if (file.exists()) {

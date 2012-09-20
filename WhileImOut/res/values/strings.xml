@@ -6,5 +6,7 @@
     <string name="add_button_text">Create New Task</string>
     <string name="add_button_hint">Use this button to create a new task</string>
     <string name="log_file">&quot;/&quot;</string>
+    <string name="title_task_detail">Task Detail</string>
+    <string name="title_task_list">Tasks</string>
 
 </resources>
