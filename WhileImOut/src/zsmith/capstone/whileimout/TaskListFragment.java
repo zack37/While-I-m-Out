@@ -1,7 +1,6 @@
 package zsmith.capstone.whileimout;
 
 import zsmith.capstone.whileimout.dummy.DummyContent;
-import android.R;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
@@ -19,12 +18,12 @@ public class TaskListFragment extends SherlockListFragment {
 
     public interface Callbacks {
 
-        public void onItemSelected(String id);
+        public void onItemSelected(int location);
     }
 
     private static Callbacks sDummyCallbacks = new Callbacks() {
         @Override
-        public void onItemSelected(String id) {
+        public void onItemSelected(int location) {
         }
     };
 
@@ -35,8 +34,8 @@ public class TaskListFragment extends SherlockListFragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setListAdapter(new ArrayAdapter<DummyContent.DummyItem>(getActivity(),
-                R.layout.simple_list_item_activated_1,
-                R.id.text1,
+                android.R.layout.simple_list_item_activated_1,
+                android.R.id.text1,
                 DummyContent.ITEMS));
     }
 
@@ -68,7 +67,7 @@ public class TaskListFragment extends SherlockListFragment {
     @Override
     public void onListItemClick(ListView listView, View view, int position, long id) {
         super.onListItemClick(listView, view, position, id);
-        mCallbacks.onItemSelected(DummyContent.ITEMS.get(position).id);
+        mCallbacks.onItemSelected(position);
     }
 
     @Override

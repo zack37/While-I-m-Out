@@ -1,28 +1,78 @@
 <resources>
 
-    <string-array name="tut_titles">
-        <item>Design &amp; Build a 1980s iOS Phone App: Design Comp Slicing</item>
-        <item>Best of Tuts+ in February 2011</item>
-        <item>Create a Brick Breaker Game with the Corona SDK: Game Controls</item>
-        <item>Exporting Graphics for Mobile Apps: PNG or JPEG?</item>
-        <item>Android Tablet Design</item>
-        <item>Build a Titanium Mobile Pizza Ordering App: Order Form Setup</item>
-        <item>Create a Brick Breaker Game with the Corona SDK: Application Setup</item>
-        <item>Android Tablet Virtual Device Configurations</item>
-        <item>Build a Titanium Mobile Pizza Ordering App: Topping Selection</item>
-        <item>Design &amp; Build a 1980s iOS Phone App: Interface Builder Setup</item>
+    <string-array name="state_names">
+        <item>Alabama</item>
+        <item>Alaska</item>
+        <item>Arizona</item>
+        <item>Arkansas</item>
+        <item>California</item>
+        <item>Colorado</item>
+        <item>Connecticut</item>
+        <item>Delaware</item>
+        <item>Florida</item>
+        <item>Georgia</item>
+        <item>Hawaii</item>
+        <item>Idaho</item>
+        <item>Illinois</item>
+        <item>Indianna</item>
+        <item>Iowa</item>
+        <item>Kansas</item>
+        <item>Kentucky</item>
+        <item>Louisiana</item>
+        <item>Maine</item>
+        <item>Maryland</item>
+        <item>Massachusetts</item>
+        <item>Michigan</item>
+        <item>Minnesota</item>
+        <item>Mississippi</item>
+        <item>Missouri</item>
+        <item>Montana</item>
+        <item>Nebraska</item>
+        <item>Nevada</item>
+        <item>New Hampshire</item>
+        <item>New Jersey</item>
+        <item>New Mexico</item>
+        <item>New York</item>
+        <item>North Carolina</item>
+        <item>North Dakota</item>
+        <item>Ohio</item>
+        <item>Oklahoma</item>
+        <item>Oregon</item>
+        <item>Pennsylvania</item>
+        <item>Rhode Island</item>
+        <item>South Carolina</item>
+        <item>South Dakota</item>
+        <item>Tenessee</item>
+        <item>Texas</item>
+        <item>Utah</item>
+        <item>Vermont</item>
+        <item>Virginia</item>
+        <item>Washington</item>
+        <item>West Virginia</item>
+        <item>Wisconsin</item>
+        <item>Wyoming</item>
     </string-array>
-    <string-array name="tut_links">
-        <item>http://mobile.tutsplus.com/tutorials/mobile-design-tutorials/80s-phone-app-slicing/</item>
-        <item>http://mobile.tutsplus.com/articles/news/best-of-tuts-in-february-2011/</item>
-        <item>http://mobile.tutsplus.com/tutorials/corona/create-a-brick-breaker-game-with-the-corona-sdk-game-controls/</item>
-        <item>http://mobile.tutsplus.com/tutorials/mobile-design-tutorials/mobile-design_png-or-jpg/</item>
-        <item>http://mobile.tutsplus.com/tutorials/android/android-tablet-design/</item>
-        <item>http://mobile.tutsplus.com/tutorials/appcelerator/build-a-titanium-mobile-pizza-ordering-app-order-form-setup/</item>
-        <item>http://mobile.tutsplus.com/tutorials/corona/corona-sdk_brick-breaker/</item>
-        <item>http://mobile.tutsplus.com/tutorials/android/android-sdk_tablet_virtual-device-configuration/</item>
-        <item>http://mobile.tutsplus.com/tutorials/appcelerator/pizza-ordering-app-part-2/</item>
-        <item>http://mobile.tutsplus.com/tutorials/iphone/1980s-phone-app_interface-builder-setup/</item>
+    <string-array name="interval">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
+        <item>15</item>
+        <item>16</item>
+        <item>17</item>
+        <item>18</item>
+        <item>19</item>
+        <item>20</item>
     </string-array>
 
 </resources>
