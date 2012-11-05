@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/delete_task_menu_item"
+        android:icon="@drawable/ic_action_delete"
+        android:title="Delete Task"/>
+    <item
+        android:id="@+id/edit_task_menu_item"
+        android:icon="@drawable/ic_action_edit"
+        android:title="Edit Task"/>
+    <item
+        android:id="@+id/toggle_check_menu_item"
+        android:title="Check/Uncheck Task"/>
+
+</menu>

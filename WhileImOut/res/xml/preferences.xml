@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <PreferenceCategory android:title="Time Settings" >
+        <EditTextPreference
+            android:dialogIcon="@drawable/ic_action_clock"
+            android:icon="@drawable/ic_action_clock"
+            android:key="time_interval"
+            android:negativeButtonText="Cancel"
+            android:persistent="true"
+            android:positiveButtonText="Change"
+            android:summary="@string/time_interval_summary"
+            android:title="@string/time_interval_title" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="Proximity Settings" >
+        <EditTextPreference
+            android:icon="@drawable/ic_action_map"
+            android:key="proximity_interval"
+            android:persistent="true"
+            android:title="@string/proximity_interval_title" />
+
+        <ListPreference
+            android:defaultValue="Meters"
+            android:icon="@drawable/ic_action_ruler"
+            android:key="distance_metric"
+            android:persistent="true"
+            android:positiveButtonText="Change"
+            android:summary="@string/metric_preferences_summary"
+            android:title="@string/metric_preferences_title" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="Task Settings" >
+        <SwitchPreference
+            android:key="proximity_switch"
+            android:persistent="true"
+            android:summaryOff="@string/notify_tasks_summary_on"
+            android:summaryOn="@string/notify_tasks_summary_off"
+            android:title="@string/proximity_switch_title" />
+    </PreferenceCategory>
+
+</PreferenceScreen>

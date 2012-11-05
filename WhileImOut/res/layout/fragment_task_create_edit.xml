@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <EditText
+            android:id="@+id/name_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:layout_marginTop="19dp"
+            android:hint="@string/create_task_name_hint"
+            android:inputType="textCapSentences"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/location_field_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/name_edit_text"
+            android:layout_marginTop="20dp"
+            android:text="@string/location_text"
+            android:textColor="@android:color/white"
+            android:textSize="24sp" />
+
+        <LinearLayout
+            android:id="@+id/location_field_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/location_field_label"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="12dp"
+            android:orientation="vertical" >
+
+            <EditText
+                android:id="@+id/street_address_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_weight=".25"
+                android:hint="@string/street_address_text"
+                android:inputType="textCapWords"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/city_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_weight=".25"
+                android:hint="@string/city_text"
+                android:inputType="textCapWords"
+                android:textSize="20sp" />
+
+            <Spinner
+                android:id="@+id/state_spinner"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight=".25"
+                android:entries="@array/state_names"
+                android:spinnerMode="dropdown" />
+
+            <EditText
+                android:id="@+id/zip_code_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_weight=".25"
+                android:hint="@string/zip_code_text"
+                android:inputType="number"
+                android:maxLength="5"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/proximity_mode_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/location_field_layout"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/proximity_button_label"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".7"
+                android:text="@string/proximity_mode"
+                android:textColor="#fff"
+                android:textSize="24sp" />
+
+            <ToggleButton
+                android:id="@+id/toggle_button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".3" />
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/description_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/proximity_mode_layout"
+            android:layout_marginTop="8dp"
+            android:hint="@string/description"
+            android:inputType="textCapSentences"
+            android:singleLine="false"
+            android:textSize="24sp" />
+    </RelativeLayout>
+
+</ScrollView>
